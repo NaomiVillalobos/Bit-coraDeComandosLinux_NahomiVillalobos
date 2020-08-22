@@ -1,21 +1,99 @@
 #Información del sistema
-arch: mostrar la arquitectura de la máquina.
-uname -m: mostrar la arquitectura de la máquina.
-uname -r: mostrar la versión del kernel usado.
-dmidecode -q: mostrar los componentes (hardware) del sistema.
-hdparm -i /dev/hda: mostrar las características de un disco duro.
-hdparm -tT /dev/sda: realizar prueba de lectura en un disco duro.
-cat /proc/cpuinfo: mostrar información de la CPU.
-cat /proc/interrupts: mostrar las interrupciones.
-cat /proc/meminfo: verificar el uso de memoria.
-cat /proc/swaps: mostrar ficheros swap.
-cat /proc/version: mostrar la versión del kernel.
-cat /proc/net/dev: mostrar adaptadores de red y estadísticas.
-cat /proc/mounts: mostrar el sistema de ficheros montado.
-lspci -tv: mostrar los dispositivos PCI.
-lsusb -tv: mostrar los dispositivos USB.
-date: mostrar la fecha del sistema.
-cal 2011: mostrar el almanaque de 2011.
-cal 07 2011: mostrar el almanaque para el mes julio de 2011.
-date 041217002011.00: colocar (declarar, ajustar) fecha y hora.
-clock -w: guardar los cambios de fecha en la BIOS.
+*arch: mostrar la arquitectura de la máquina.
+*uname -m: mostrar la arquitectura de la máquina.
+*uname -r: mostrar la versión del kernel usado.
+*dmidecode -q: mostrar los componentes (hardware) del sistema.
+*cat: mostrar información de un fichero.
+*date: mostrar la fecha del sistema.
+*date 041217002011.00: colocar (declarar, ajustar) fecha y hora.
+*clock -w: guardar los cambios de fecha en la BIOS.
+*uptime: mostrar el tiempo de uso.
+*lsb_release -a: mostrar la versión del SO.
+*unname -a: mostrar versión del Kernel.
+*ps -aux: ver los procesos activos.
+*ps -aux | grep NP: buscar el nombre entre los procesos.
+*kill -9 PID: matar el proceso.
+
+
+#Apagar (Reiniciar Sistema o Cerrar Sesión)
+*shutdown now: apagar el sistema.
+*shutdown -h hours:minutes &: apagado planificado del sistema.
+*shutdown -c: cancelar un apagado planificado del sistema.
+*shutdown -r now: reiniciar (1).
+*reboot: reiniciar (2).
+*logout: cerrar sesión.
+
+#Archivos y Directorios
+*cd /home: entrar en el directorio “home”.
+*cd ..: retroceder un nivel.
+*cd ../..: retroceder 2 niveles.
+*cd: ir al directorio raíz.
+*pwd: mostrar el camino del directorio de trabajo.
+*ls: ver los ficheros de un directorio.
+*ls -l: listar los ficheros de un directorio.
+*ls a: ver los ficheros ocultos.
+*pstree: mostrar los ficheros y carpetas en forma de árbol comenzando por la raíz.
+*mkdir dir1: crear una carpeta o directorio con nombre ‘dir1’.
+*rm -f file1: borrar el fichero llamado ‘file1’.
+*rmdir dir1: borrar la carpeta llamada ‘dir1’.
+*mv dir1 new_dir: renombrar o mover un fichero o carpeta.
+*cp file1: copiar un fichero.
+*cp -a dir1: copiar un directorio.
+*touch file1: crea un fichero llamado ‘file1.
+*top: mostrar procesos en tiempo real.
+*htop: mostrar procesos en tiempo real.
+*alias:poner alias para facilitar llamados.
+
+#Usuarios y Grupos
+*groupadd nombre_del_grupo: crear un nuevo grupo.
+*groupdel nombre_del_grupo: borrar un grupo.
+*groupmod -n nuevo_nombre_del_grupo viejo_nombre_del_grupo: renombrar un grupo.
+*useradd user1 -p password: crear un nuevo usuario.
+*userdel user1: borrar un usuario.
+*passwd: cambiar contraseña.
+*passwd user1: cambiar la contraseña de un usuario (solamente por root).
+*sudo su: cambiar usuario a root.
+*exit: aslir de root.
+*whoami: indicar el usuario loggeado.
+
+#Actualizador de paquetes APT
+*apt install package_name: instalar / actualizar un paquete deb.
+*apt update: actualizar la lista de paquetes.
+*apt upgrade: actualizar todos los paquetes instalados.
+*apt remove package_name: eliminar un paquete del sistema.
+*apt purge package_name: desinstalar y borrar instalador de un paquee del sistema.
+*dpkg -1 package_name: instalar el paquete como root.
+
+#Ver el contenido de un fichero
+*cat file1: ver los contenidos de un fichero comenzando desde la primera hilera.
+*more file1: ver el contenido a lo largo de un fichero.
+*less file1: parecido al commando ‘more’ pero permite salvar el movimiento en el fichero así como el movimiento hacia atrás.
+*head -n file1: ver las n primeras líneas de un fichero.
+*tail -n file1: ver las n últimas líneas de un fichero.
+*nano dir/:editor de archivos.
+*vi dir/:editor de archivos.
+*cat/: mostrar el contenido del fichero.
+*cat var/log/syslog/: mostrar el log de eventos.
+
+#Trabajo con la RED
+*ip addr: ver dirección ip.
+*hostname: mostrar el nombre del host del sistema.
+*telnet: conexión remota a un equipo.
+
+#Otros comandos útiles
+*clear: limpiar la pantalla.
+*man CMD: mostrar manual del CMD.
+*history: mostrar historial de comandos.
+*!!: correr comando anterior.
+
+#Discos
+*cd /mnt/ram_disk: entrar a la unidad.
+*df-h: mostrar todos los discos.
+*gnome-disk-utility: ver información del disco.
+*gparted: administrar particiones.
+*mount: montar particiones nuevas.
+
+#Docker
+*docker ps: ver los contenedores que están activos
+*sudo apt install docker-ce: instalar docker
+*sudo systenctl start docker: iniciar el contenedor
